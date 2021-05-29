@@ -74,13 +74,17 @@ function draw() {
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
 
-  //Matter.Body.translate(packageBody, {x: -20 , y:0})
-
+ // Matter.Body.translate(packageBody, {x: -20 , y:0})
+if(packageSprite.isTouching(helicopterSprite)){
   packageSprite.x = helicopterSprite.x
+}
 
   if(keyDown("down_arrow")){
 	Matter.Body.setStatic(packageBody,false)
 }
+
+
+
 
   drawSprites();
   
